@@ -11,13 +11,15 @@
     <!-- endinject -->
   </head>
   <body>
-    <nav>
+    <nav ng-controller="MainCtrl as main">
       <ul>
         <li ui-sref="home">Home</li>
         <li ui-sref="register">Register</li>
         <li ui-sref="login">Login</li>
-        <li ui-sref="userIndex">Users</li>
-        <li ui-sref="requestIndex">Requests</li>
+        <li ui-sref="userShow({ id: main.user.id })">Profile</li>
+        <!-- <li ui-sref="userIndex">Users</li> -->
+        <li ui-sref="requestsIndex">Requests</li>
+        <li ui-sref="productsIndex">Products</li>
       </ul>
     </nav>
     <h1>Nalewka?</h1>

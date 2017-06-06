@@ -17,6 +17,7 @@ function CurrentUserService(TokenService, User, $rootScope) {
           // console.log('DECODED ID: ', decoded.id);
           // console.log('USER: ', user);
           self.currentUser = user;
+          self.butt = user;
           $rootScope.$broadcast('loggedIn');
         });
     }

@@ -21,7 +21,7 @@ function RequestShowCrtl($stateParams, Request, $state) {
       .delete($stateParams)
       .$promise
       .then(() => {
-        $state.go('requestIndex');
+        $state.go('requestsIndex');
       });
   }
 

@@ -15,7 +15,7 @@ function ProductNewCtrl($state, Product) {
       .save(vm.product)
       .$promise
       .then(() => {
-        $state.go('productIndex');
+        $state.go('productsIndex');
       });
   }
 }

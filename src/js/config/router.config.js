@@ -11,13 +11,19 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/',
     templateUrl: '/js/views/home.html'
   })
-  .state('userIndex', {
-    url: '/users',
-    templateUrl: '/js/views/users.html',
-    controller: 'UserCtrl',
+  // .state('userIndex', {
+  //   url: '/users',
+  //   templateUrl: '/js/views/user/users.html',
+  //   controller: 'UserCtrl',
+  //   controllerAs: 'user'
+  // })
+  .state('userShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/user/show.html',
+    controller: 'UserShowCtrl',
     controllerAs: 'user'
   })
-  .state('requestIndex', {
+  .state('requestsIndex', {
     url: '/requests',
     templateUrl: '/js/views/request/index.html',
     controller: 'RequestCrtl',
@@ -35,7 +41,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'RequestShowCrtl',
     controllerAs: 'request'
   })
-  .state('productIndex', {
+  .state('productsIndex', {
     url: '/products',
     templateUrl: '/js/views/product/index.html',
     controller: 'ProductCrtl',

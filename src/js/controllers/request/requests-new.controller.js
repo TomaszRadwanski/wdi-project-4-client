@@ -14,7 +14,7 @@ function RequestNewCtrl($state, Request) {
       .save(vm.request)
       .$promise
       .then(() => {
-        $state.go('requestIndex');
+        $state.go('requestsIndex');
       });
   }
 }
