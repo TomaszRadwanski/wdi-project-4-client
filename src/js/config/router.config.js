@@ -23,6 +23,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'RequestCrtl',
     controllerAs: 'request'
   })
+  .state('requestsNew', {
+    url: '/requests/new',
+    templateUrl: '/js/views/request/new.html',
+    controller: 'RequestNewCtrl',
+    controllerAs: 'request'
+  })
   .state('requestShow', {
     url: '/requests/:id',
     templateUrl: '/js/views/request/show.html',

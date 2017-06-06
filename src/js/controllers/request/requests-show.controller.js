@@ -1,11 +1,13 @@
 angular
-  .module('AlcoholApp')
-  .controller('RequestShowCrtl', RequestShowCrtl);
+.module('AlcoholApp')
+.controller('RequestShowCrtl', RequestShowCrtl);
 
 
 RequestShowCrtl.$inject = ['$stateParams', 'Request', '$state'];
 function RequestShowCrtl($stateParams, Request, $state) {
   const vm = this;
+  vm.delete = requestDelete;
+
 
   Request
     .get($stateParams)
@@ -14,31 +16,13 @@ function RequestShowCrtl($stateParams, Request, $state) {
       vm.request = data;
     });
 
+  function requestDelete(){
+    Request
+      .remove($stateParams)
+      .$promise
+      .then(() => {
+        $state.go('requestIndex');
+      });
+  }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// vm.delete = requestDelete;
-
-
-// function requestDelete(){
-//   Request
-//     .remove($stateParams)
-//     .$promise
-//     .then(() => {
-//       $state.go('requestIndex');
-//     });
-// }

@@ -11,6 +11,6 @@ function RequestCrtl($http){
   .then(response => {
     vm.requests = response.data;
 
-    console.log(vm.requests);
+    // console.log(vm.requests);
   });
 }
