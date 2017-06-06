@@ -1,0 +1,10 @@
+<h2>Requests</h2>
+
+<!-- <a ui-sref="criminalsNew">Add Criminal</a> -->
+<ul>
+  <li ng-repeat="request in request.requests">
+    <div>
+      <a ui-sref="requestShow({ id: request.id })">{{ request }}</a>
+    </div>
+  </li>
+</ul>
