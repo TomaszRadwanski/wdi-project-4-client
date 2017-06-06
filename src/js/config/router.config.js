@@ -35,6 +35,18 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'RequestShowCrtl',
     controllerAs: 'request'
   })
+  .state('productIndex', {
+    url: '/products',
+    templateUrl: '/js/views/product/index.html',
+    controller: 'ProductCrtl',
+    controllerAs: 'product'
+  })
+  .state('productsNew', {
+    url: '/products/new',
+    templateUrl: '/js/views/product/new.html',
+    controller: 'ProductNewCtrl',
+    controllerAs: 'product'
+  })
   .state('register', {
     url: '/register',
     templateUrl: '/js/views/register.html',

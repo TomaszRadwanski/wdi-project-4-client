@@ -11,6 +11,6 @@ function UserCtrl($http){
   .then(response => {
     vm.users = response.data;
 
-    console.log(vm.users);
+    // console.log(vm.users);
   });
 }
