@@ -38,9 +38,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   .state('requestShow', {
     url: '/requests/:id',
     templateUrl: '/js/views/request/show.html',
-    controller: 'RequestShowCrtl',
+    controller: 'RequestShowCtrl',
     controllerAs: 'request'
   })
+  // .state('bidsNew', {
+  //   url: '/bids/new',
+  //   templateUrl: '/js/views/new-bid.html',
+  //   controller: 'RequestShowCrtl',
+  //   controllerAs: 'bid'
+  // })
   .state('productsIndex', {
     url: '/products',
     templateUrl: '/js/views/product/index.html',

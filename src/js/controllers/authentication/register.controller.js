@@ -8,6 +8,7 @@ function RegisterCtrl(User, CurrentUserService, $state){
 
   vm.register = register;
   function register() {
+    console.log(vm.user);
     User
       .register(vm.user).$promise
       .then(data => {

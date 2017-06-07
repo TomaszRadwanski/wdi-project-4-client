@@ -1,10 +1,15 @@
 <h2>Requests</h2>
 
 <a ui-sref="requestsNew">Create a new request!!!!!!!!!!</a>
-<ul>
-  <li ng-repeat="request in request.requests">
-    <div>
-      <a ui-sref="requestShow({ id: request.id })">{{ request }}</a>
-    </div>
-  </li>
-</ul>
+<div class="requestIndex">
+  <ul>
+    <li ng-repeat="request in request.requests">
+      <div>
+        <a ui-sref="requestShow({ id: request.id })">Type of Alcohol: {{ request.alcohol }}</a>
+        <a>Flavor: {{ request.flavor }}</a>
+        <a>Quantity: {{ request.quantity }}</a>
+        <a>Additional notes: {{ request.notes }}</a>
+      </div>
+    </li>
+  </ul>
+</div>

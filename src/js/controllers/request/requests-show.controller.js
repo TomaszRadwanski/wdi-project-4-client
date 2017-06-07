@@ -1,28 +1,45 @@
 angular
 .module('AlcoholApp')
-.controller('RequestShowCrtl', RequestShowCrtl);
+.controller('RequestShowCtrl', RequestShowCtrl);
 
 
-RequestShowCrtl.$inject = ['$stateParams', 'Request', '$state'];
-function RequestShowCrtl($stateParams, Request, $state) {
+RequestShowCtrl.$inject = ['$stateParams', 'Request', '$state', 'Bid'];
+function RequestShowCtrl($stateParams, Request, $state, Bid) {
   const vm = this;
   vm.delete = requestDelete;
 
+  vm.bid = {};
 
   Request
-    .get($stateParams)
-    .$promise
-    .then(data => {
-      vm.request = data;
-    });
+  .get($stateParams)
+  .$promise
+  .then(data => {
+    vm.request = data;
+    vm.bid.request_id = data.id;
+    console.log(data.id);
+  });
 
   function requestDelete(){
     Request
-      .delete($stateParams)
-      .$promise
-      .then(() => {
-        $state.go('requestsIndex');
-      });
+    .delete($stateParams)
+    .$promise
+    .then(() => {
+      $state.go('requestsIndex');
+    });
   }
+
+  vm.createBid = bidsCreate;
+
+
+  function bidsCreate() {
+    Bid
+    .save(vm.bid)
+    .$promise
+    .then(() => {
+      console.log(vm.bid);
+    });
+  }
+
+
 
 }
