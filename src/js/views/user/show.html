@@ -1,8 +1,38 @@
 <h2>User Profile</h2>
 
 <h3>Name: {{ user.user.full_name }}</h3>
-<h4>Username: {{ user.user.username }}</h3>
+<h4>Username: {{ user.user.username }}</h4>
+<img ng-src="{{ user.user.image }}" alt="">
+<p>Bio: {{ user.user.bio }}</p>
 
 
 
-{{ user.user }}
+<h2>PRODUCTS</h2>
+<ul>
+  <li ng-repeat="product in user.user.products track by $index">
+    <div>
+      <h3>Name: {{ product.name }}</h3>
+      <img ng-src="{{ product.image }}" alt="">
+      <p>Description: {{ product.description }}</p>
+      <p>Quantity in stock: {{ product.quantity }}</p>
+      <p>Price: {{ product.price }}</p>
+      <p>Location: {{ product.location }}</p>
+      <button type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })">Edit</button>
+      <button  ng-click="user.deleteProduct(product)">Delete</button>
+    </div>
+  </li>
+</ul>
+
+<h2>REQUESTS</h2>
+
+<ul>
+  <li ng-repeat="request in user.user.requests">
+    <div>
+      <a ui-sref="requestShow({ id: request.id })">Type of Alcohol: {{ request.alcohol }}</a>
+      <p>Flavor: {{ request.flavor }}</p>
+      <p>Quantity: {{ request.quantity }}</p>
+      <p>Additional notes: {{ request.notes }}</p>
+      <button  ng-click="user.deleteRequest(request)">Delete</button>
+    </div>
+  </li>
+</ul>

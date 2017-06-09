@@ -1,15 +1,33 @@
 <h2>Request Show</h2>
 
-{{ request.request }}
+<p>Type of Alcohol: {{ request.request.alcohol }}</p>
+<p>Flavor: {{ request.request.flavor }}</p>
+<p>Quantity: {{ request.request.quantity }}</p>
+<p>Additional notes: {{ request.request.notes }}</p>
+<a ui-sref="userShow({ id: request.request.user.id })">Created by: {{ request.request.user.username }}</a>
+<h4>Bids on this request</h4>
+{{request.request.bids}}
+<ul>
+  <li ng-repeat="bid in request.request.bids">
+    <div>
+      <p>Price: {{ bid.price }}</p>
+      <p>Location of brewer: {{ bid.location }}</p>
+      <p>Time it will take to brew: {{ bid.time }}</p>
+      <p>Additional notes: {{ bid.description }}</p>
+      <a ui-sref="userShow({ id: bid.user.id })">Created by: {{ bid.user.username }}</a>
+    </div>
+  </li>
+</ul>
 
 
 
-<button  ng-click="request.delete(request)">Delete</button>
-
+<!-- TO CREATE A BID!!!!!!!!!!! -->
+<h3>Add a bid to this request</h3>
+<div class="">
 
 <form ng-submit="request.createBid()">
   <div class="form-group">
-    <label for="price">Price (integer plzz)</label>
+    <label for="price">Price</label>
     <input type="text" id="price" name="price" ng-model="request.bid.price">
   </div>
   <div class="form-group">
@@ -21,8 +39,10 @@
     <input type="text" id="time" name="time" ng-model="request.bid.time">
   </div>
   <div class="form-group">
-    <label for="description">Description</label>
+    <label for="description">Any additional notes?</label>
     <input type="text" id="description" name="description" ng-model="request.bid.description">
   </div>
   <input type="submit" value="Add">
 </form>
+
+</div>

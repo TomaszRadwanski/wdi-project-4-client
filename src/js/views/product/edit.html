@@ -1,4 +1,4 @@
-<form ng-submit="product.create()">
+<form ng-submit="product.update()">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" ng-model="product.product.name">
@@ -8,21 +8,21 @@
     <input type="text" id="description" name="description" ng-model="product.product.description">
   </div>
   <div class="form-group">
-    <label for="quantity">Quantity of stock</label>
+    <label for="quantity">Quantity</label>
     <input type="text" id="quantity" name="quantity" ng-model="product.product.quantity">
+  </div>
+  <div class="form-group">
+    <label for="price">Price per unit</label>
+    <input type="text" id="price" name="price" ng-model="product.product.price">
   </div>
   <div class="form-group">
     <label for="image">Image</label>
     <input type="text" id="image" name="image" ng-model="product.product.image">
   </div>
   <div class="form-group">
-    <label for="price">Price per unit</label>
-    <input type="text" id="price" name="price" ng-model="product.product.price" placeholder="e.g. 20€ per bottle">
-  </div>
-  <div class="form-group">
     <label for="location">Location</label>
     <input type="text" id="location" name="location" ng-model="product.product.location">
   </div>
 
-  <input type="submit" value="Add">
+  <input type="submit" value="Update">
 </form>

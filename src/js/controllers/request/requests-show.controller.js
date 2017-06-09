@@ -16,7 +16,6 @@ function RequestShowCtrl($stateParams, Request, $state, Bid) {
   .then(data => {
     vm.request = data;
     vm.bid.request_id = data.id;
-    console.log(data.id);
   });
 
   function requestDelete(){
@@ -32,6 +31,7 @@ function RequestShowCtrl($stateParams, Request, $state, Bid) {
 
 
   function bidsCreate() {
+    console.log(vm.bid);
     Bid
     .save(vm.bid)
     .$promise

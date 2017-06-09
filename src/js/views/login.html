@@ -1,6 +1,9 @@
+<div class="form">
+  <h2>Login</h2>
+  <form ng-submit="login.login()">
+    <input class="textInput" type="email" name="email" ng-model="login.user.email" placeholder="Email" autofill="off">
+    <input class="textInput" type="password" name="password" ng-model="login.user.password" placeholder="Password" autofill="off">
+    <input type="submit" class="button" value="Submit">
+  </form>
 
-<form ng-submit="login.login()">
-  <input  type="email" name="email" ng-model="login.user.email" placeholder="Email">
-  <input  type="password" name="password" ng-model="login.user.password" placeholder="Password">
-  <input type="submit" value="Submit">
-</form>
+</div>

@@ -1,14 +1,15 @@
 <h2>Requests</h2>
-
+<label for="filter">Filter by type of alcohol: </label>
+<input type="text" class="search" ng-model="request.q" placeholder="Search..." name="filter">
 <a ui-sref="requestsNew">Create a new request!!!!!!!!!!</a>
 <div class="requestIndex">
   <ul>
-    <li ng-repeat="request in request.requests">
+    <li ng-repeat="request in request.requests | filter: { alcohol: request.q }">
       <div>
         <a ui-sref="requestShow({ id: request.id })">Type of Alcohol: {{ request.alcohol }}</a>
-        <a>Flavor: {{ request.flavor }}</a>
-        <a>Quantity: {{ request.quantity }}</a>
-        <a>Additional notes: {{ request.notes }}</a>
+        <p>Flavor: {{ request.flavor }}</p>
+        <p>Quantity: {{ request.quantity }}</p>
+        <p>Additional notes: {{ request.notes }}</p>
       </div>
     </li>
   </ul>

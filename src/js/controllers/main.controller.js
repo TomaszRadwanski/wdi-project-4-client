@@ -20,6 +20,11 @@ function MainCtrl($rootScope, CurrentUserService, $state) {
     CurrentUserService.removeUser();
   };
 
-
+  vm.isNavCollapsed = true;
+  $rootScope.$on('$stateChangeSuccess', () => {
+    if(vm.stateHasChanged) vm.message = null;
+    if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    vm.isNavCollapsed = true;
+  });
 
 }

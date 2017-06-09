@@ -1,28 +1,32 @@
-<h1>Register</h1>
-<form ng-submit="register.register()">
-  <div>
-    <input type="text" name="username" ng-model="register.user.username" placeholder="Username">
-  </div>
-  <div>
-    <input type="text" name="firstName" ng-model="register.user.first_name" placeholder="First name">
-  </div>
-  <div>
-    <input type="text" name="lastName" ng-model="register.user.last_name" placeholder="Last name">
-  </div>
-  <div>
-    <input type="text" name="image" ng-model="register.user.image" placeholder="Image link">
-  </div>
-  <div>
-    <input type="textarea" name="bio" ng-model="register.user.bio" placeholder="Bio">
-  </div>
-  <div>
-    <input type="email" name="email" ng-model="register.user.email" placeholder="Email">
-  </div>
-  <div>
-    <input type="password" name="password" ng-model="register.user.password" placeholder="Password">
-  </div>
-  <div>
-    <input type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Password confirmation">
-  </div>
-  <input type="submit" value="Submit" />
-</form>
+<div class="form">
+
+  <h2>Register</h2>
+  <form ng-submit="register.register()">
+    <div>
+      <input class="textInput" type="text" name="username" ng-model="register.user.username" placeholder="Username">
+    </div>
+    <div>
+      <input class="textInput" type="text" name="firstName" ng-model="register.user.first_name" placeholder="First name">
+    </div>
+    <div>
+      <input class="textInput" type="text" name="lastName" ng-model="register.user.last_name" placeholder="Last name">
+    </div>
+    <div>
+      <input class="textInput" type="text" name="image" ng-model="register.user.image" placeholder="Image link">
+    </div>
+    <div>
+      <input class="textInput" type="textarea" name="bio" ng-model="register.user.bio" placeholder="Bio">
+    </div>
+    <div>
+      <input class="textInput" type="email" name="email" ng-model="register.user.email" placeholder="Email">
+    </div>
+    <div>
+      <input class="textInput" type="password" name="password" ng-model="register.user.password" placeholder="Password">
+    </div>
+    <div>
+      <input class="textInput" type="password" name="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Password confirmation">
+    </div>
+    <input class="button" type="submit" value="Submit" />
+  </form>
+
+</div>

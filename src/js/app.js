@@ -3,5 +3,7 @@ angular
   'ui.router',
   'ngResource',
   'angular-jwt',
-  'ngSanitize'
+  'ngSanitize',
+  'ui.bootstrap',
+  'ngAnimate'
 ]);
