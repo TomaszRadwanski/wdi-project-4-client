@@ -1,21 +1,22 @@
 <h2>Products</h2>
-
+<input type="text" class="search" ng-model="product.q" placeholder="Search..." name="filter">
 <a ui-sref="productsNew">Create a new product!!!!!!!!!!</a>
 
 <div class="container-fluid">
-    <div ng-repeat="product in product.products">
+    <div ng-repeat="product in product.products | filter: { alcohol: product.q }">
       <div class="col-lg-3 col-md-3 col-s-12 cards">
-        <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) ), url({{product.image}}); background-position: center center;">
+        <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) ), url({{product.image}}) no-repeat; background-position: center center; background-size: auto 100%;">
           <div>
             <h3>Name: {{ product.name }}</h3>
             <div>
-              <p class="desc">Description: {{ product.description }}</p>
+              <p>Type of alcohol: {{ product.alcohol }}</p>
               <p>Quantity: {{ product.quantity }}</p>
               <p>Price: {{ product.price }}</p>
             </div>
             <div>
-              <a ui-sref="userShow({ id: product.user.id })">Created by: {{ product.user.username }}</a>
               <p>Location: {{ product.location }}</p>
+              <p class="desc">Description: {{ product.description }}</p>
+              <a ui-sref="userShow({ id: product.user.id })">Created by: {{ product.user.username }}</a>
             </div>
           </div>
         </div>

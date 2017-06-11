@@ -2,7 +2,23 @@
 <label for="filter">Filter by type of alcohol: </label>
 <input type="text" class="search" ng-model="request.q" placeholder="Search..." name="filter">
 <a ui-sref="requestsNew">Create a new request!!!!!!!!!!</a>
-<div class="requestIndex">
+<div class="container-fluid">
+  <div ng-repeat="request in request.requests | filter: { alcohol: request.q }">
+    <div class="col-lg-3 col-md-3 col-s-12 cards">
+      <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) )">
+        <div>
+          <a ui-sref="requestShow({ id: request.id })">Type of Alcohol: {{ request.alcohol }}</a>
+          <div>
+            <p>Flavor: {{ request.flavor }}</p>
+            <p>Quantity: {{ request.quantity }}</p>
+            <p class="desc">Additional notes: {{ request.notes }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="requestIndex">
   <ul>
     <li ng-repeat="request in request.requests | filter: { alcohol: request.q }">
       <div>
@@ -13,4 +29,4 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->

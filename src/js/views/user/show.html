@@ -8,31 +8,48 @@
 
 
 <h2>PRODUCTS</h2>
-<ul>
-  <li ng-repeat="product in user.user.products track by $index">
-    <div>
-      <h3>Name: {{ product.name }}</h3>
-      <img ng-src="{{ product.image }}" alt="">
-      <p>Description: {{ product.description }}</p>
-      <p>Quantity in stock: {{ product.quantity }}</p>
-      <p>Price: {{ product.price }}</p>
-      <p>Location: {{ product.location }}</p>
-      <button type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })">Edit</button>
-      <button  ng-click="user.deleteProduct(product)">Delete</button>
+<div class="container-fluid">
+    <div ng-repeat="product in user.user.products track by $index">
+      <div class="col-lg-3 col-md-3 col-s-12 cards">
+        <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) ), url({{product.image}}) no-repeat; background-position: center center; background-size: auto 100%;">
+          <div>
+            <h3>Name: {{ product.name }}</h3>
+            <div>
+              <p>Type of alcohol: {{ product.alcohol }}</p>
+              <p>Quantity: {{ product.quantity }}</p>
+              <p>Price: {{ product.price }}</p>
+            </div>
+            <div>
+              <p>Location: {{ product.location }}</p>
+              <p class="desc">Description: {{ product.description }}</p>
+            </div>
+            <button class="change" type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })">Edit</button>
+            <button class="change" ng-click="user.deleteProduct(product)">Delete</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </li>
-</ul>
+</div>
+
+
 
 <h2>REQUESTS</h2>
 
-<ul>
-  <li ng-repeat="request in user.user.requests">
-    <div>
-      <a ui-sref="requestShow({ id: request.id })">Type of Alcohol: {{ request.alcohol }}</a>
-      <p>Flavor: {{ request.flavor }}</p>
-      <p>Quantity: {{ request.quantity }}</p>
-      <p>Additional notes: {{ request.notes }}</p>
-      <button  ng-click="user.deleteRequest(request)">Delete</button>
+<div class="container-fluid">
+  <div ng-repeat="request in user.user.requests">
+    <div class="col-lg-3 col-md-3 col-s-12 cards">
+      <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) )">
+        <div>
+          <a ui-sref="requestShow({ id: request.id })">Type of Alcohol: {{ request.alcohol }}</a>
+          <div>
+            <p>Flavor: {{ request.flavor }}</p>
+            <p>Quantity: {{ request.quantity }}</p>
+            <p class="desc">Additional notes: {{ request.notes }}</p>
+          </div>
+          <button  ng-click="user.deleteRequest(request)" class="change">Delete</button>
+        </div>
+      </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>
+<br>
