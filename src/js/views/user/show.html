@@ -40,8 +40,8 @@
             <p>Location: {{ product.location }}</p>
             <p class="desc">Description: {{ product.description }}</p>
           </div>
-          <button class="change" type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })" ng-if="main.user.id === user.user.id">Edit</button>
-          <button class="change" ng-click="user.deleteProduct(product)" ng-if="main.user.id === user.user.id">Delete</button>
+          <button class="btn" type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })" ng-if="main.user.id === user.user.id">Edit</button>
+          <button class="btn" ng-click="user.deleteProduct(product)" ng-if="main.user.id === user.user.id">Delete</button>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
             <p>Quantity: {{ request.quantity }}</p>
             <p class="desc">Additional notes: {{ request.notes }}</p>
           </div>
-          <button  ng-click="user.deleteRequest(request)" class="change" ng-if="main.user.id === user.user.id">Delete</button>
+          <button  ng-click="user.deleteRequest(request)" class="btn" ng-if="main.user.id === user.user.id">Delete</button>
         </div>
       </div>
     </div>
