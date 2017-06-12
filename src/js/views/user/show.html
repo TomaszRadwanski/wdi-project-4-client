@@ -1,39 +1,56 @@
-<h2>User Profile</h2>
+<div class="conatainer user">
+  <h2>User Profile</h2>
 
-<h3>Name: {{ user.user.full_name }}</h3>
-<h4>Username: {{ user.user.username }}</h4>
-<img ng-src="{{ user.user.image }}" alt="">
-<p>Bio: {{ user.user.bio }}</p>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-s-4 left-user">
+      <img ng-src="{{ user.user.image }}" alt="" class="user-image">
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-s-4">
+      <div class="user-info">
+        <h3>Name: {{ user.user.full_name }}</h3>
+        <h4>Username: {{ user.user.username }}</h4>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-s-4">
+      <div class="user-bio">
+        <p>Bio:</p>
+        <p>{{ user.user.bio }}</p>
+      </div>
+    </div>
 
 
+  </div>
+</div>
 
-<h2>PRODUCTS</h2>
+
+<h2 class="product-ban">{{ user.user.username | uppercase }}'S PRODUCTS</h2>
 <div class="container-fluid">
-    <div ng-repeat="product in user.user.products track by $index">
-      <div class="col-lg-3 col-md-3 col-s-12 cards">
-        <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) ), url({{product.image}}) no-repeat; background-position: center center; background-size: auto 100%;">
+  <div ng-repeat="product in user.user.products track by $index">
+    <div class="col-lg-3 col-md-3 col-s-12 cards">
+      <div class="card" style="background: linear-gradient( rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) ), url({{product.image}}) no-repeat; background-position: center center; background-size: auto 100%;">
+        <div>
+          <h3>Name: {{ product.name }}</h3>
           <div>
-            <h3>Name: {{ product.name }}</h3>
-            <div>
-              <p>Type of alcohol: {{ product.alcohol }}</p>
-              <p>Quantity: {{ product.quantity }}</p>
-              <p>Price: {{ product.price }}</p>
-            </div>
-            <div>
-              <p>Location: {{ product.location }}</p>
-              <p class="desc">Description: {{ product.description }}</p>
-            </div>
-            <button class="change" type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })">Edit</button>
-            <button class="change" ng-click="user.deleteProduct(product)">Delete</button>
+            <p>Type of alcohol: {{ product.alcohol }}</p>
+            <p>Quantity: {{ product.quantity }}</p>
+            <p>Price: {{ product.price }}</p>
           </div>
+          <div>
+            <p>Location: {{ product.location }}</p>
+            <p class="desc">Description: {{ product.description }}</p>
+          </div>
+          <button class="change" type="button" ui-sref="productsEdit({ id: user.user.products[$index].id })" ng-if="main.user.id === user.user.id">Edit</button>
+          <button class="change" ng-click="user.deleteProduct(product)" ng-if="main.user.id === user.user.id">Delete</button>
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 
 
-<h2>REQUESTS</h2>
+<h2 class="request-ban">{{ user.user.username | uppercase}}'S REQUESTS</h2>
 
 <div class="container-fluid">
   <div ng-repeat="request in user.user.requests">
@@ -46,7 +63,7 @@
             <p>Quantity: {{ request.quantity }}</p>
             <p class="desc">Additional notes: {{ request.notes }}</p>
           </div>
-          <button  ng-click="user.deleteRequest(request)" class="change">Delete</button>
+          <button  ng-click="user.deleteRequest(request)" class="change" ng-if="main.user.id === user.user.id">Delete</button>
         </div>
       </div>
     </div>

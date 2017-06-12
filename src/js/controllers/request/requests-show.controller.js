@@ -29,6 +29,16 @@ function RequestShowCtrl($stateParams, Request, $state, Bid) {
 
   vm.createBid = bidsCreate;
 
+  vm.newBid = newBid;
+
+  function newBid() {
+    if (vm.bidN === true) {
+      vm.bidN = false;
+    } else {
+      vm.bidN = true;
+    }
+  }
+
 
   function bidsCreate() {
     console.log(vm.bid);
