@@ -49,7 +49,26 @@ function RequestShowCtrl($stateParams, Request, $state, Bid) {
       console.log(vm.bid);
     });
   }
+  vm.select = select;
 
+  function select(bid) {
+    // console.log('i hope this works');
+    vm.request.status = 'accepted';
+    bid.status = 'accepted';
+    Request
+      .update({ id: $stateParams.id }, vm.request)
+      .$promise
+      .then(() => {
+        // console.log('REQUEST HOPE IT WORKS');
+      });
 
+    Bid
+      .update({ id: bid.id }, bid)
+      .$promise
+      .then(() => {
+        // console.log('BID HOPE IT WORKS');
+      });
+
+  }
 
 }
