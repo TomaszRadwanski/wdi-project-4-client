@@ -7,6 +7,7 @@
 }
 body {
   background-color: #fafafa;
+
 }
 nav {
   background-color: rgba(47, 43, 33, .9) !important;
@@ -23,7 +24,7 @@ nav {
     color: salmon;
   }
   li:hover {
-    background-color: #DDB53B;
+    background-color: #ffcc14;
     color: white;
   }
 }
@@ -71,7 +72,7 @@ h1 {
     .button-three {
       color: black;
       position: relative;
-      background-color: white;
+      background-color: #ffcc14;
       border: none;
       padding: 5px;
       width: 50%;
@@ -80,6 +81,7 @@ h1 {
       transition-duration: 0.4s;
       text-decoration: none;
       overflow: hidden;
+      border-radius: 5px;
     }
 
     .button-three:hover{
@@ -116,12 +118,42 @@ h1 {
   color: black;
   background-color: #FFC928;
   border-radius: 15px;
+  .card:first-child {
+    padding-top: 10px !important;
+  }
   div {
     margin-top: 10px;
     a {
+      color: red;
       font-size: 17px;
-      color: white;
     }
+  }
+}
+.card-bid {
+  text-align: center;
+  word-wrap: break-word;
+  margin: 0 -5px;
+  color: black;
+  background-color: #ff8f3f;
+  border-radius: 15px;
+  // min-height: 270px;
+  p:first-child {
+    padding-top: 10px !important;
+  }
+  div {
+    margin-top: 10px;
+    a {
+      color: red;
+      font-size: 17px;
+    }
+  }
+}
+.yellow {
+  a {
+    color: white !important;
+  }
+  a:first-child {
+    padding-top: 5px !important;
   }
 }
 .container-fluid {
@@ -269,41 +301,71 @@ h1 {
   text-align: center;
   font-size: 50px;
 }
+.sub-title {
+  text-align: center;
+  font-size: 30px;
+  // align-items: center;
+  // margin: 0 auto;
+}
 .accepted {
-  background-color: green;
-  // color: white;
+  // border: 2px solid red;
+  background-color: #8ae22f !important;
 }
 .add-form {
   margin: 70px auto;
   width: 660px;
   font-size: 20px;
-  // background-color: rgba(255, 255, 255, .2);
-  // border: 2px solid black;
   color: red;
   .input-set {
     padding: 20px 0 !important;
   }
   h2 {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
   input {
     width: 300px;
-    border: 1px solid #595859 !important;
     color: #595859;
   }
   .btn {
-    background-color: #991589 !important;
     font-size: 20px;
     color: white;
   }
 }
 .request-show {
-  background-color: rgba(89, 88, 89, 0.5);
   width: 500px;
   text-align: center;
   margin: 0 auto;
+  font-size: 15px;
 }
 .btn {
-  background-color: #DDB53B;
+  background-color: #ffcc14;
+  margin: 5px;
+  color: white;
+}
+.btn:focus {
+  outline-width: 0;
+}
+.minHeight {
+  min-height: 270px !important;
+}
+.new-bid {
+  width: 356px;
+  margin: 10px 0 30px 20px;
+}
+.home {
+  text-align: center;
+  font-size: 70px;
+  margin-top: 200px;
+  color: rgba(255, 0, 0, 0.8);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+
+}
+.homet {
+  text-align: center;
+  font-size: 30px;
+  color: rgba(255, 0, 0, 0.8);
+  font-family: 'Work Sans', sans-serif;
+
 }

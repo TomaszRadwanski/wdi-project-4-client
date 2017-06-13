@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="AlcoholApp">
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
   <meta charset="utf-8">
   <title>Angular Stack Setup</title>
   <base href="/">
@@ -19,15 +20,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" ui-sref="home">Nalevca</a>
+      <a class="navbar-brand" ui-sref="home">Top Shelf</a>
     </div>
     <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
       <ul class="nav navbar-nav">
-        <li ui-sref="register">Register</li>
-        <li ui-sref="login">Login</li>
-        <li ui-sref="userShow({ id: main.user.id })">Profile</li>
-        <li ui-sref="requestsIndex">Requests</li>
-        <li ui-sref="productsIndex">Products</li>
+        <li ui-sref="register" ng-hide="main.user">Register</li>
+        <li ui-sref="login" ng-hide="main.user">Login</li>
+        <li ng-click="main.logout()" ng-show="main.user">Logout</li>
+        <li ui-sref="userShow({ id: main.user.id })" ng-show="main.user">Profile</li>
+        <li ui-sref="requestsIndex" ng-show="main.user">Requests</li>
+        <li ui-sref="productsIndex" ng-show="main.user">Products</li>
       </ul>
     </div>
   </nav>

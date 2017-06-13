@@ -68,7 +68,44 @@ function RequestShowCtrl($stateParams, Request, $state, Bid) {
       .then(() => {
         // console.log('BID HOPE IT WORKS');
       });
-
   }
 
 }
+
+
+
+
+
+
+
+// vm.unselect = unselect;
+
+// function unselect(bid) {
+//   // console.log('i hope this works');
+//   if( vm.request.status !== 'accepted' ) {
+//     vm.request.status = 'accepted';
+//     Request
+//       .update({ id: $stateParams.id }, vm.request)
+//       .$promise
+//       .then(() => {
+//       // console.log('REQUEST HOPE IT WORKS');
+//       });
+//   } else {
+//     vm.request.status = 'pending';
+//     Request
+//       .update({ id: $stateParams.id }, vm.request)
+//       .$promise
+//       .then(() => {
+//       // console.log('REQUEST HOPE IT WORKS');
+//       });
+//   }
+//   bid.status = 'pending';
+//
+//
+//   Bid
+//     .update({ id: bid.id }, bid)
+//     .$promise
+//     .then(() => {
+//       // console.log('BID HOPE IT WORKS');
+//     });
+// }
